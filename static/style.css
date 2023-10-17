@@ -2,77 +2,167 @@
     This Stylesheet is used to apply styling directly to the layout.html
     Use this stylesheet when you want apply to all templates that use layout.html
 */
-body {
-    background-color: #be6c00;
-    background-image: url(https://i.imgur.com/x8JbAe0.png);
-    background-size: cover;
-    font-family: 'Pushster', cursive;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+html,body{
+  margin:0;
+  height:120%;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-h1, h2 {
-    color: ivory;
-    background-color: rgb(37, 47, 56);
-    padding: 5px;
-    font-family: 'Pushster', cursive;
-    text-align: center;
-}
-
-h3, h4, h5{
+.header{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height:50vw;
+    min-height:300px;
+    max-height:370px;
+    min-width:300px;
+    color:#d85dd2;
+  }
+  .header:after{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+   background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+  }
+  .header:before{
+    content:"";
+    width:100%;
+    height:200%;
+    position:absolute;
+    top:0;
+    left:0;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0); backface-visibility: hidden;
+    scale:1.0, 1.0;
+      transform: translateZ(0);
+    background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
+    background-size:100%;
+    background-attachment:fixed;
+    animation: grow 120s  linear 10ms infinite;
+    transition:all 0.4s ease-in-out;
+    z-index:-2
+  }
+  .header a{
+    color:#eee
+  }
+  .info h4, .meta{
+    font-size:0.7em
+  }
+  .meta{
+    font-style:italic;
+  }
+  @keyframes grow{
+    0% { transform: scale(1) translateY(0px)}
+    50% { transform: scale(1.2) translateY(-400px)}
+  }
+  .content{  
+    padding:5% 10%;
+    text-align:justify
+  }
+  .btn{
+    color:#333;
+    border:2px solid;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-block;
+    padding:5px 10px;
+    font-weight:600
+  }
+  
+  h3, h4, h5{
     text-align: center;
     color: beige;
 }
+  
+  h6{
 
-h6{
-
-}
+  }
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+      format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+  }
 
 a{
-    font-size: 16px;
-    color: white;
-    border-radius: 5px;
-    background-color: rgb(61, 25, 1);
-    padding: 5px 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8357eb00;
+    width: 19vw;
+    height: 5vh;
+}
+  
+ a {
+    transition: all 0.5s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 4rem;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 10px 10px 0px #07bccc,
+      15px 15px 0px #e601c0,
+      20px 20px 0px #e9019a,
+      25px 25px 0px #f40468,
+      45px 45px 10px #482896;
+    cursor: pointer;
+}
+  
+a:hover 
+{
+    font-variation-settings: "wght" 100, "ital" 0;
+    text-shadow: none;
+}
+.body {
+    background-color: #ce74e0;
+    min-width:300px;
 }
 
-a:hover{
-    text-decoration: none;
-    color: rgb(155, 134, 76);
-}
+.container {
+    text-align: center; /* Center-align the text inside the container */
+  }
+  
+  .container h2 {
+    text-align: center; /* Center-align the h2 element within the container (optional) */
+  }
 
-a::after{
-    color: black;
-}
-
-.welcome{
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
+.my-element {
+    background-color: #ce74e0;
+  }
+  
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     padding: 5px;
     width: 100%;
-    background-color: rgb(61, 25, 1);
-    color: white;
+    background-color: rgb(59, 181, 230);
+    color: rgb(0, 0, 0);
     text-align: center;
   }
 
-.menu{
-    border:rgb(238, 158, 105) solid 3px;
-    border-radius: 5px;
-    height: 120px;
-}
+
 
 .home_img{
     text-align: center;
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    height: 300px;
+    height: 350px;
     width: auto;
 }
 
@@ -86,31 +176,13 @@ a::after{
   display: flex;
 }
 
-.left_panel{
-  width: 200px;
-  height: 200px;
-  margin: 30px;
-  padding-top: 60px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: rgb(61, 25, 1);
-  font-family: 'Pushster', cursive;
-}
+
 
 .mid_panel{
-    width: 320px;
+    width: 250px;
 }
 
-.right_panel{
-    width: 200px; 
-    height: 200px;
-    margin: 30px;
-    padding-top: 60px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: rgb(61, 25, 1);
-    font-family: 'Pushster', cursive;
-}
+
 
 .items-list{
     font-size: 20px;
